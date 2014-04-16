@@ -1,8 +1,8 @@
 === Plugin Name ===
 Contributors: seanbarton
 Tags: welcome email, wordpress welcome email, welcome email editor, mail, email, new user email, password reminder, lost password, welcome email attachment, mail attachment, email attachment
-Requires at least: 3.0
-Tested up to: 3.5.2
+Requires at least: 3.5
+Tested up to: 3.8.2
 
 Allows you to edit the Wordpress Welcome/Forgot Password Emails to customise the content and even add an attachment. Allows adding of headers to prevent emails going into spam and changes to the text. Also offers a password reminder service accessable via the quick options on the admin users page.
 
