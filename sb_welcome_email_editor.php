@@ -100,7 +100,11 @@ add_filter ("retrieve_password_message", "sb_we_lost_password_message", null, 2)
 function sb_we_lost_password_message( $message, $key ) {
 	
     $settings = get_option('sb_we_settings');
-
+	
+	if ($settings->set_global_headers) {
+		sb_we_set_email_filter_headers();
+	}
+		
     if ( strpos($_POST['user_login'], '@') ) {
         $user_data = get_user_by('email', trim($_POST['user_login']));
     } else {
@@ -179,7 +183,7 @@ function sb_we_set_email_filter_headers($reset=false) {
 		remove_filter('wp_mail_charset', 'sb_we_get_charset', 1, 1);
 	} else {
 		$sb_we_settings = get_option('sb_we_settings');
-	
+
 		if ($from_email = $sb_we_settings->header_from_email) {
 			add_filter('wp_mail_from', 'sb_we_get_from_email', 1, 1);
 	
